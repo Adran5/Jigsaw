@@ -20,16 +20,16 @@ var trapY = 2
 // Flag that controls the loop
 var treasureFound = false
 
+
+
 // The game begins once the "Begin" button is pushed
 function startJigsaw (){
-  
   // Collect User's name
   var userName =prompt("What is your name?")
     document.getElementById("game").play();
     console.log(userName)
-
   while(!treasureFound) {
-    var direction = prompt("Hello " + userName + ". Use the directions to move around the board. Find the key to save your life or make the wrong move and the game is over. (north, south, east, west)" + " Current Location (" + newX + " , " + newY + ")" )
+    var direction = prompt("Hello " + userName + ". Use the directions to move around the board. Find the key to save your life or make the wrong move and the game is over. (north, south, east, west)" + " Your Current Location (" + newX + " , " + newY + ")" )
     console.log(direction)
 
     // tmp vars, only used for checking validity of new user location after move
@@ -52,12 +52,12 @@ function startJigsaw (){
         userY = newY
 
 
-      }else {
+      } else {
         document.getElementById("behave").play();
         alert("You've reached a locked door, turn around and try another escape. (" + newX + " , " + newY + ")")
         console.log("You've reached a locked door, turn around and try another escape. " + newX + " , " + newY)
       }
-    }else if(direction == "east") {
+    } else if(direction == "east") {
       newX = userX + 1
       newY = userY
       console.log("New location" + newX + " , " + newY)
@@ -66,12 +66,12 @@ function startJigsaw (){
       if(newX >= 0 && newY >= 0 && newX <= maxX && newY <= maxY){
         userX = newX
         userY = newY
-      }else {
+      } else {
         document.getElementById("behave").play();
         alert("You've reached a locked door, turn around and try another escape. (" + newX + " , " + newY + ")")
         console.log("You've reached a locked door, turn around and try another escape. " + newX + " , " + newY)
       }
-    }else if(direction == "south") {
+    } else if(direction == "south") {
       newX = userX
       newY = userY - 1
       console.log("New location" + newX + " , " + newY)
@@ -85,7 +85,7 @@ function startJigsaw (){
         alert("You've reached a locked door, turn around and try another escape. (" + newX + " , " + newY + ")")
         console.log("You've reached a locked door, turn around and try another escape. " + newX + " , " + newY)
       }
-    }else if(diection == "west") {
+    } else if(direction == "west") {
       newX = userX - 1
       newY = userY
       console.log("New location" + newX + " , " + newY)
@@ -94,15 +94,15 @@ function startJigsaw (){
       if(newX >= 0 && newY >= 0 && newX <= maxX && newY <= maxY){
         userX = newX
         userY = newY
-      }else {
+      } else {
         document.getElementById("behave").play();
         alert("You've reached a locked door, turn around and try another escape. " + newX + " , " + newY)
         console.log("You've reached a locked door, turn around and try another escape. (" + newX + " , " + newY + ")")
       }
 
     } else {
-    alert("Please pick a valid direction")
-    console.log("Please pick a valid direction")
+      alert("Please enter a real direction.");
+      console.log("Please enter a real direction.");
     }
 
     // see if user location matches treasure
