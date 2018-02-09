@@ -117,7 +117,7 @@ function startJigsaw (){
       treasureFound = true
       document.getElementById("gameover").play();
       console.log("Game Over, You've found the trap");
-      alert("You've fallen through a trap door in the floor, right into a human meat grinder. Your Dead Meat! ");
+      alert("You've fallen through a trap door in the floor, right into a human meat grinder. You're Dead Meat! ");
     }
   }
 }
